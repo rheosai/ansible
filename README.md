@@ -14,6 +14,14 @@ The install folder is for the tutorial where you will install ansible from the c
 cd install
 docker-compose up -d
 ```
+This command starts up 1 container. To stop this container type
+```
+docker-compose stop
+```
+To remove the container
+```
+docker-compose rm
+```
 --------------------------------------------------------------------------------------------
 The course folder is where all the main course files will be stored.
 ```
