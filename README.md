@@ -11,4 +11,4 @@ This folder consists of two folders
 The install folder is for the tutorial where you will install ansible from the command line.
 --------------------------------------------------------------------------------------------
 The course folder is where all the main course files will be stored.
-This is where we will spend most of our time.
+--------------------------------------------------------------------------------------------
