@@ -36,118 +36,120 @@ services:
     networks:
      - proansible.ai
 
-  # ubuntu2:
-  #   hostname: ubuntu2
-  #   container_name: ubuntu2
-  #   image: karrad/proansible:ubuntu
-  #   ports:
-  #    - ${UBUNTU2_SSH_PORT}:22
-  #    - ${UBUNTU2_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/ubuntu2/ansible:/home/ansible
-  #    - /Users/karrad/ans3/ubuntu2/root:/root
-  #   networks:
-  #    - proansible.ai
+  ubuntu2:
+    hostname: ubuntu2
+    container_name: ubuntu2
+    image: rheosai/proansible:ubuntu
+    ports:
+     - ${UBUNTU2_SSH_PORT}:22
+     - ${UBUNTU2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/ubuntu2/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/ubuntu2/root:/root
+    networks:
+     - proansible.ai
 
-  # alpine1:
-  #   hostname: alpine1
-  #   container_name: alpine1
-  #   image: karrad/proansible:alpine
-  #   ports:
-  #    - ${ALPINE1_SSH_PORT}:22
-  #    - ${ALPINE1_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/alpine1/ansible:/home/ansible
-  #    - /Users/karrad/ans3/alpine1/root:/root
-  #   networks:
-  #    - proansible.ai
-  
-  
-  # alpine2:
-  #   hostname: alpine2
-  #   container_name: alpine2
-  #   image: karrad/proansible:alpine
-  #   ports:
-  #    - ${ALPINE2_SSH_PORT}:22
-  #    - ${ALPINE2_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/alpine2/ansible:/home/ansible
-  #    - /Users/karrad/ans3/alpine2/root:/root
-  #   networks:
-  #    - proansible.ai
+  centos1:
+    hostname: centos1
+    container_name: centos1
+    image: rheosai/proansible:centos
+    ports:
+     - ${CENTOS1_SSH_PORT}:22
+     - ${CENTOS1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/centos1/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/centos1/root:/root
+    networks:
+     - proansible.ai
 
-  # centos1:
-  #   hostname: centos1
-  #   container_name: centos1
-  #   image: karrad/proansible:centos
-  #   ports:
-  #    - ${CENTOS1_SSH_PORT}:22
-  #    - ${CENTOS1_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/centos1/ansible:/home/ansible
-  #    - /Users/karrad/ans3/centos1/root:/root
-  #   networks:
-  #    - proansible.ai
+  centos2:
+    hostname: centos2
+    container_name: centos2
+    image: rheosai/proansible:centos
+    ports:
+     - ${CENTOS2_SSH_PORT}:22
+     - ${CENTOS2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/centos2/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/centos2/root:/root
+    networks:
+     - proansible.ai
 
-  # centos2:
-  #   hostname: centos2
-  #   container_name: centos2
-  #   image: karrad/proansible:centos
-  #   ports:
-  #    - ${CENTOS2_SSH_PORT}:22
-  #    - ${CENTOS2_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/centos2/ansible:/home/ansible
-  #    - /Users/karrad/ans3/centos2/root:/root
-  #   networks:
-  #    - proansible.ai
+  suse1:
+    hostname: suse1
+    container_name: suse1
+    image: rheosai/proansible:opensuse
+    ports:
+     - ${SUSE1_SSH_PORT}:22
+     - ${SUSE1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/suse1/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/suse1/root:/root
+    networks:
+     - proansible.ai
 
-  # suse1:
-  #   hostname: suse1
-  #   container_name: suse1
-  #   image: karrad/proansible:opensuse
-  #   ports:
-  #    - ${SUSE1_SSH_PORT}:22
-  #    - ${SUSE1_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/suse1/ansible:/home/ansible
-  #    - /Users/karrad/ans3/suse1/root:/root
-  #   networks:
-  #    - proansible.ai
 
-  # suse2:
-  #   hostname: suse2
-  #   container_name: suse2
-  #   image: karrad/proansible:opensuse
-  #   ports:
-  #    - ${SUSE2_SSH_PORT}:22
-  #    - ${SUSE2_HTTP_PORT}:80
-  #   privileged: true
-  #   volumes:
-  #    - /sys/fs/cgroup:/sys/fs/cgroup:ro
-  #    - /Users/karrad/ans3/common:/common
-  #    - /Users/karrad/ans3/suse2/ansible:/home/ansible
-  #    - /Users/karrad/ans3/suse2/root:/root
-  #   networks:
-  #    - proansible.ai
+  suse2:
+    hostname: suse2
+    container_name: suse2
+    image: rheosai/proansible:opensuse
+    ports:
+     - ${SUSE2_SSH_PORT}:22
+     - ${SUSE2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/suse2/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/suse2/root:/root
+    networks:
+     - proansible.ai
+
+
+  alpine1:
+    hostname: alpine1
+    container_name: alpine1
+    image: rheosai/proansible:alpine
+    ports:
+     - ${ALPINE1_SSH_PORT}:22
+     - ${ALPINE1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/alpine1/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/alpine1/root:/root
+    networks:
+     - proansible.ai
+
+
+  alpine2:
+    hostname: alpine2
+    container_name: alpine2
+    image: rheosai/proansible:alpine
+    ports:
+     - ${ALPINE2_SSH_PORT}:22
+     - ${ALPINE2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/proansible/course/common:/common
+     - ${BASE_DIR}/proansible/course/alpine2/ansible:/home/ansible
+     - ${BASE_DIR}/proansible/course/alpine2/root:/root
+    networks:
+     - proansible.ai
 
   # debian1:
   #   hostname: debian1
