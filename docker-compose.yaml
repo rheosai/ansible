@@ -87,7 +87,7 @@ services:
   suse1:
     hostname: suse1
     container_name: suse1
-    image: rheosai/ansible:opensuse
+    image: rheosai/ansible:suse
     ports:
      - ${SUSE1_SSH_PORT}:22
      - ${SUSE1_HTTP_PORT}:80
@@ -104,7 +104,7 @@ services:
   suse2:
     hostname: suse2
     container_name: suse2
-    image: rheosai/ansible:opensuse
+    image: rheosai/ansible:suse
     ports:
      - ${SUSE2_SSH_PORT}:22
      - ${SUSE2_HTTP_PORT}:80
