@@ -1,31 +1,19 @@
 ## START HERE
 Clone the repository by using the command
 ```
-git clone https://github.com/rheosai/proansible.git
-cd proansible
+git clone https://github.com/rheosai/ansible.git
+cd ansible
 ```
 
-This folder consists of two folders
-- install
-- course
+This folder consists of all the course lesson folders along with the docker-compose file and the .env file.
 --------------------------------------------------------------------------------------------
-The install folder is for the tutorial where you will install ansible from the command line.
+To start up your lab edit the .env file and follow the directions there. Then at the command line
+
 ```
-cd install
 docker-compose up -d
 ```
-This command starts up 1 container. To stop this container type
+To stop the lab and delete all the containers
 ```
-docker-compose stop
-```
-To remove the container
-```
-docker-compose rm
-```
---------------------------------------------------------------------------------------------
-The course folder is where all the main course files will be stored.
-```
-cd course
-docker-compose up -d
+docker-compose down
 ```
 --------------------------------------------------------------------------------------------

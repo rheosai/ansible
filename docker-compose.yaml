@@ -1,0 +1,152 @@
+version: '3.8'
+networks:
+  ansible.ai:
+    name: ansible.ai
+
+services:
+  control:
+    hostname: control
+    container_name: control
+    image: rheosai/ansible:control
+    ports:
+     - ${CONTROL_SSH_PORT}:22
+     - ${CONTROL_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/control/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/control/root:/root
+    networks:
+     - ansible.ai
+
+  ubuntu1:
+    hostname: ubuntu1
+    container_name: ubuntu1
+    image: rheosai/ansible:ubuntu
+    ports:
+     - ${UBUNTU1_SSH_PORT}:22
+     - ${UBUNTU1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/ubuntu1/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/ubuntu1/root:/root
+    networks:
+     - ansible.ai
+
+  ubuntu2:
+    hostname: ubuntu2
+    container_name: ubuntu2
+    image: rheosai/ansible:ubuntu
+    ports:
+     - ${UBUNTU2_SSH_PORT}:22
+     - ${UBUNTU2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/ubuntu2/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/ubuntu2/root:/root
+    networks:
+     - ansible.ai
+
+  centos1:
+    hostname: centos1
+    container_name: centos1
+    image: rheosai/ansible:centos
+    ports:
+     - ${CENTOS1_SSH_PORT}:22
+     - ${CENTOS1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/centos1/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/centos1/root:/root
+    networks:
+     - ansible.ai
+
+  centos2:
+    hostname: centos2
+    container_name: centos2
+    image: rheosai/ansible:centos
+    ports:
+     - ${CENTOS2_SSH_PORT}:22
+     - ${CENTOS2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/centos2/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/centos2/root:/root
+    networks:
+     - ansible.ai
+
+  suse1:
+    hostname: suse1
+    container_name: suse1
+    image: rheosai/ansible:opensuse
+    ports:
+     - ${SUSE1_SSH_PORT}:22
+     - ${SUSE1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/suse1/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/suse1/root:/root
+    networks:
+     - ansible.ai
+
+
+  suse2:
+    hostname: suse2
+    container_name: suse2
+    image: rheosai/ansible:opensuse
+    ports:
+     - ${SUSE2_SSH_PORT}:22
+     - ${SUSE2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/suse2/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/suse2/root:/root
+    networks:
+     - ansible.ai
+
+
+  alpine1:
+    hostname: alpine1
+    container_name: alpine1
+    image: rheosai/ansible:alpine
+    ports:
+     - ${ALPINE1_SSH_PORT}:22
+     - ${ALPINE1_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/common:/common
+     - ${BASE_DIR}/ansible/volumemaps/alpine1/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/alpine1/root:/root
+    networks:
+     - ansible.ai
+
+
+  alpine2:
+    hostname: alpine2
+    container_name: alpine2
+    image: rheosai/ansible:alpine
+    ports:
+     - ${ALPINE2_SSH_PORT}:22
+     - ${ALPINE2_HTTP_PORT}:80
+    privileged: true
+    volumes:
+     - /sys/fs/cgroup:/sys/fs/cgroup:ro
+     - ${BASE_DIR}/ansible/volumemaps/volumemapscommon:/common
+     - ${BASE_DIR}/ansible/volumemaps/alpine2/ansible:/home/ansible
+     - ${BASE_DIR}/ansible/volumemaps/alpine2/root:/root
+    networks:
+     - ansible.ai
