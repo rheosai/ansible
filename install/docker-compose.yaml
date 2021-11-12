@@ -1,17 +1,17 @@
 version: '3.8'
 networks:
-  proansible.ai:
-    name: proansible.ai
+  ansible.ai:
+    name: ansible.ai
 
 services:
   control:
     hostname: control
     container_name: control
-    image: rheosai/proansible:ubuntu
+    image: rheosai/ansible:ubuntu
     ports:
      - ${CONTROL_SSH_PORT}:22
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
     networks:
-     - proansible.ai
+     - ansible.ai
