@@ -14,9 +14,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/control/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/control/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/control/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/control/root:/root
     networks:
      - ansible.ai
 
@@ -30,9 +30,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/ubuntu1/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/ubuntu1/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/ubuntu1/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/ubuntu1/root:/root
     networks:
      - ansible.ai
 
@@ -46,9 +46,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/ubuntu2/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/ubuntu2/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/ubuntu2/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/ubuntu2/root:/root
     networks:
      - ansible.ai
 
@@ -62,9 +62,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/centos1/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/centos1/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/centos1/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/centos1/root:/root
     networks:
      - ansible.ai
 
@@ -78,9 +78,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/centos2/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/centos2/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/centos2/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/centos2/root:/root
     networks:
      - ansible.ai
 
@@ -94,9 +94,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/suse1/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/suse1/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/suse1/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/suse1/root:/root
     networks:
      - ansible.ai
 
@@ -111,9 +111,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/suse2/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/suse2/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/suse2/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/suse2/root:/root
     networks:
      - ansible.ai
 
@@ -128,9 +128,9 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/common:/common
-     - ${BASE_DIR}/ansible/volumemaps/alpine1/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/alpine1/root:/root
+     - ${BASE_DIR}/volumemaps/common:/common
+     - ${BASE_DIR}/volumemaps/alpine1/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/alpine1/root:/root
     networks:
      - ansible.ai
 
@@ -145,8 +145,8 @@ services:
     privileged: true
     volumes:
      - /sys/fs/cgroup:/sys/fs/cgroup:ro
-     - ${BASE_DIR}/ansible/volumemaps/volumemapscommon:/common
-     - ${BASE_DIR}/ansible/volumemaps/alpine2/ansible:/home/ansible
-     - ${BASE_DIR}/ansible/volumemaps/alpine2/root:/root
+     - ${BASE_DIR}/volumemaps/volumemapscommon:/common
+     - ${BASE_DIR}/volumemaps/alpine2/ansible:/home/ansible
+     - ${BASE_DIR}/volumemaps/alpine2/root:/root
     networks:
      - ansible.ai
