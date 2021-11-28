@@ -24,4 +24,4 @@ SUSE2_HTTP_PORT=8008
 "
 echo "$ports" > .env
 echo "BASE_DIR='$PWD'" >> .env
-echo "Created the .env file. Updated the BASE_DIR. Ok!!"
+echo "Updated the .env file. Updated the BASE_DIR. Ok!!"
