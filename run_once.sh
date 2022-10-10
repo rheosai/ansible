@@ -4,6 +4,7 @@ source ~/.bashrc
 
 sudo apt-get update -y
 sudo apt-get upgrade -y 
+sudo apt install gpg -y
 
 mkdir ~/.aws
 cp awscreds ~/.aws/credentials
@@ -18,21 +19,19 @@ cp sshconfig ~/.ssh/config
 chmod 600 ~/.ssh/config
 
 
-echo "-------- Installing Homebrew  ---------"
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-test -r ~/.bash_profile && echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bash_profile
-echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.profile
-echo "-------- Installing Git  ---------"
-brew install git
-echo "-------- Installing Terraform  ---------"
-brew install terraform
 echo "-------- Installing Ansible  ---------"
-brew install ansible
-echo "-------- Installing Vault  ---------"
-brew install vault
+sudo apt-add-repository ppa:ansible/ansible
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg >/dev/null
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
+sudo apt update -y 
+sudo apt install ansible terraform vault -y
+
+terraform version
+ansible --version
+vault version
 
 
 
