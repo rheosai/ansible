@@ -25,23 +25,23 @@ resource "aws_instance" "ubuntu1" {
     Name = "ubuntu1"
   }
 }
-resource "aws_instance" "redhat1" {
+resource "aws_instance" "suse1" {
   instance_type = "t2.micro"
-  ami           = "ami-06640050dc3f556bb"
+  ami           = "ami-08e167817c87ed7fd"
   key_name      = "ansible"
   tags = {
     Name = "suse1"
   }
 }
-resource "aws_instance" "ubuntu1" {
+resource "aws_instance" "redhat1" {
   instance_type = "t2.micro"
-  ami           = "ami-0172ce39e98b9dde3"
+  ami           = "ami-06640050dc3f556bb"
   key_name      = "ansible"
   tags = {
-    Name = "ubuntu1"
+    Name = "redhat1"
   }
 }
-resource "aws_instance" "ubuntu1" {
+resource "aws_instance" "amazon1" {
   instance_type = "t2.micro"
   ami           = "ami-026b57f3c383c2eec"
   key_name      = "ansible"
