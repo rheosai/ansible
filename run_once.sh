@@ -16,13 +16,6 @@ brew install ansible
 echo "-------- Installing Vault  ---------"
 brew install vault
 
-
-
-
-
-
-
-
 echo "--------  ALL DONE ---------"
 
 
