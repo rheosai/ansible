@@ -28,7 +28,6 @@ echo "-------- Installing Ansible  ---------"
 brew install terraform 
 brew install vault
 brew install ansible
-brew install python
 
 terraform version
 ansible --version
