@@ -4,7 +4,7 @@ source ~/.bashrc
 
 sudo apt-get update -y
 sudo apt-get upgrade -y 
-sudo apt install gpg -y
+sudo apt-get install gpg sshpass -y
 
 mkdir ~/.aws
 cp awscreds ~/.aws/credentials
@@ -29,9 +29,10 @@ brew install terraform
 brew install vault
 brew install ansible
 
+
 terraform version
-ansible --version
 vault version
+ansible --version
 
 
 
