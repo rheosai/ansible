@@ -7,15 +7,30 @@ sudo apt-get upgrade -y
 sudo apt-get install gpg sshpass -y
 
 mkdir ~/.aws
-cp awscreds ~/.aws/credentials
-cp awsconfig ~/.aws/config
+tee ~/.aws/credentials <<EOF
+[default]
+aws_access_key_id = 
+aws_secret_access_key = 
+EOF
+
+tee ~/.aws/config <<EOF
+[default]
+region = us-east-1
+EOF
+
 chmod 750 ~/.aws
 chmod 600 ~/.aws/credentials
 chmod 600 ~/.aws/config
 
 mkdir ~/.ssh
 chmod 700 ~/.ssh
-cp sshconfig ~/.ssh/config
+tee ~/.ssh/config <<EOF
+Host *
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+EOF
+
+
 chmod 600 ~/.ssh/config
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
