@@ -3,3 +3,7 @@ terraform/.terraform/
 terraform/terraform.tfstate
 terraform/terraform.tfstate.backup
 .DS_Store
+course/.terraform.lock.hcl
+course/.terraform/
+course/terraform.tfstate
+course/terraform.tfstate.backup
